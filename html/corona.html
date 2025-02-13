@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Seleccionada</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container corona">
+        <h1 id="heading">Selecciona una imagen</h1>
+        <img id="coronaImage" src="" alt="Imagen Seleccionada">
+        <button onclick="goBack()">Regresar a la página principal</button>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        window.onload = function() {
+            const selectedIndex = localStorage.getItem("selectedImageIndex");
+
+            if (selectedIndex !== null) {
+                // Array con los títulos correspondientes
+                const headings = ["Eres la única con quien nunca me canso de hablar la unica por quien no me imprta perder el sueño es la única que pasa por mi mente todo el tiempo durante el dia", "Eres la única que puede hacerme sonreir o reí sin intentarlo, eres la única a la que no quiero perder", "De tal manera que en vez de encontrar a alguien que tuviera los mismos gustos que yo, preferi encontrar a alguien que me enseñara las cosas que no sabia que me gustaban", "Me gustas para cosas tan simples como ver una pelicula y me gustas para cosas tan complejas como ver los años pasar", "No te amo con el corazon porque deja de latir Te amo con el alma porque es eterna"];
+
+                // Cargar la imagen correspondiente
+                document.getElementById("coronaImage").src = `../img/corona${parseInt(selectedIndex) + 1}.png`;
+
+                // Actualizar el encabezado con el texto correspondiente
+                document.getElementById("heading").textContent = headings[selectedIndex];
+            }
+        };
+
+        function goBack() {
+            window.location.href = "../index.html"; // Regresar a la página principal
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+/* Ocultar imágenes al inicio */
+.hidden {
+    display: none;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #ff66cc;
+    border: 5px solid #3399ff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centrado del contenedor */
+}
+
+/* Contenedor de imágenes con estructura de cuadrícula */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas, 50% de ancho cada una */
+    grid-template-rows: repeat(2, auto); /* 2 filas con altura automática */
+    gap: 0; /* Sin espacios entre imágenes */
+    width: 100%; /* El contenedor se adapta al 100% del ancho del container */
+    background-color: black;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales de las imágenes */
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* IMG 1 */
+.image-box:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    width: 45vw; /* Ancho dinámico de acuerdo al tamaño de la pantalla */
+    height: 30vw; /* Altura proporcional */
+}
+
+/* IMG 2 */
+.image-box:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    width: 50vw; /* Ancho dinámico */
+    height: 30vw; /* Altura proporcional */
+}
+
+/* IMG 3 */
+.image-box:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+    width: 40vw; /* Ancho dinámico */
+    height: 32vw; /* Altura proporcional */
+}
+
+/* IMG 4 (Centro) */
+.image-box:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+    width: 29vw; /* Ancho dinámico */
+    height: 32vw; /* Altura proporcional */
+}
+
+/* IMG 5 (Alineada con IMG 2) */
+.image-box:nth-child(5) {
+    grid-column: 3; /* Se ajusta a la tercera columna */
+    grid-row: 2;
+    width: 30vw; /* Ancho dinámico */
+    height: 32vw; /* Altura proporcional */
+}
+
+/* Ajuste de imágenes dentro de los contenedores */
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajustar sin recortar */
+    display: block;
+}
+
+/* Botones mantienen su estilo original */
+#buttons button {
+    font-size: 20px;
+    margin: 10px;
+    background-color: #ffccff;
+    border: 2px solid #9900cc;
+    padding: 10px;
+}
+
+#nextPage, button {
+    background-color: yellow;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#resetButton {
+    background-color: #ffccff;
+    border: 2px solid #9900cc;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos de los botones con cuadrícula */
+.container .question {
+    font-size: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+/* Primera fila de botones */
+.container .question:nth-child(1),
+.container .question:nth-child(2) {
+    font-size: 40px;
+    padding: 40px;
+}
+
+/* Segunda fila de botones */
+.container .question:nth-child(3),
+.container .question:nth-child(4),
+.container .question:nth-child(5) {
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* Posicionamiento específico */
+.container .question:nth-child(3) {
+    justify-self: start;
+}
+
+.container .question:nth-child(4) {
+    justify-self: center;
+}
+
+.container .question:nth-child(5) {
+    justify-self: end;
+}
+
+/* Evitar que los botones cambien de tamaño al hacer clic */
+.container .question:active {
+    transform: scale(1);
+}
+
+/* Ajustes de visualización de imagen tras revelación */
+.container .question img {
+    display: none;
+}
+
+.container .question img.revealed {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Estilo de las imágenes después de ser reveladas */
+.revealed {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+#finalContainer {
+    background-color: #ff66cc;
+    border: 5px solid #3399ff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centrado del contenedor */
+}
+
+#finalCoronaImage {
+    max-width: 90vw; /* La imagen ocupará hasta el 90% del ancho */
+    max-height: 90vh; /* La imagen ocupará hasta el 90% de la altura */
+    width: auto; /* Mantiene la proporción */
+    height: auto; /* Mantiene la proporción */
+}
+.container.corona {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+#coronaImage {
+    order: 1; /* Imagen en primer lugar */
+    width: 1000px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#heading {
+    order: 2; /* Texto en segundo lugar */
+    font-size: 2rem;
+    color: #000000;
+    max-width: 400px;
+    text-align: left;
+}
